@@ -1,0 +1,566 @@
+@font-face {
+  font-family: 'EdvibeIcons';
+  src:  url('fonts/EdvibeIcons.eot?40s09x');
+  src:  url('fonts/EdvibeIcons.eot?40s09x#iefix') format('embedded-opentype'),
+    url('fonts/EdvibeIcons.ttf?40s09x') format('truetype'),
+    url('fonts/EdvibeIcons.woff?40s09x') format('woff'),
+    url('fonts/EdvibeIcons.svg?40s09x#EdvibeIcons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="iconedv-"], [class*=" iconedv-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'EdvibeIcons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-size: inherit;
+}
+
+.iconedv-Unpin:before {
+  content: "\e9b2";
+}
+.iconedv-More-Vertical:before {
+  content: "\e9b1";
+}
+.iconedv-Add-Box:before {
+  content: "\e900";
+}
+.iconedv-Add-Comment:before {
+  content: "\e901";
+}
+.iconedv-Add-Courses:before {
+  content: "\e902";
+}
+.iconedv-Add-File:before {
+  content: "\e903";
+}
+.iconedv-Add-List-Done:before {
+  content: "\e904";
+}
+.iconedv-Add-List:before {
+  content: "\e905";
+}
+.iconedv-Add-To:before {
+  content: "\e906";
+}
+.iconedv-Alert-Circle:before {
+  content: "\e907";
+}
+.iconedv-Archived:before {
+  content: "\e908";
+}
+.iconedv-Arrow-Down:before {
+  content: "\e909";
+}
+.iconedv-Arrow-Left:before {
+  content: "\e90a";
+}
+.iconedv-Arrow-More-Down:before {
+  content: "\e90b";
+}
+.iconedv-Arrow-More-Up:before {
+  content: "\e90c";
+}
+.iconedv-Arrow-Right:before {
+  content: "\e90d";
+}
+.iconedv-Arrow-Sort-Down:before {
+  content: "\e90e";
+}
+.iconedv-Arrow-Sort-Up:before {
+  content: "\e90f";
+}
+.iconedv-Arrow-Up:before {
+  content: "\e910";
+}
+.iconedv-Assignment:before {
+  content: "\e911";
+}
+.iconedv-Attach:before {
+  content: "\e912";
+}
+.iconedv-Board:before {
+  content: "\e913";
+}
+.iconedv-Bolt:before {
+  content: "\e914";
+}
+.iconedv-Book:before {
+  content: "\e915";
+}
+.iconedv-Brackets:before {
+  content: "\e916";
+}
+.iconedv-Calendar:before {
+  content: "\e917";
+}
+.iconedv-Call-Disabled:before {
+  content: "\e918";
+}
+.iconedv-Call-End:before {
+  content: "\e919";
+}
+.iconedv-Call-Mode-Compact:before {
+  content: "\e91a";
+}
+.iconedv-Call-Mode-Full-Speaker:before {
+  content: "\e91b";
+}
+.iconedv-Call-Mode-Full-Tile:before {
+  content: "\e91c";
+}
+.iconedv-Call-Mode-Half-Speaker:before {
+  content: "\e91d";
+}
+.iconedv-Call-Mode-Half-Tile:before {
+  content: "\e91e";
+}
+.iconedv-Call-Mode:before {
+  content: "\e91f";
+}
+.iconedv-Call:before {
+  content: "\e920";
+}
+.iconedv-Cam-Off:before {
+  content: "\e921";
+}
+.iconedv-Cam-On:before {
+  content: "\e922";
+}
+.iconedv-Cast:before {
+  content: "\e923";
+}
+.iconedv-Chat:before {
+  content: "\e924";
+}
+.iconedv-Checkbox-Blank:before {
+  content: "\e925";
+}
+.iconedv-Checkbox:before {
+  content: "\e926";
+}
+.iconedv-Chek-Circle:before {
+  content: "\e927";
+}
+.iconedv-Copy:before {
+  content: "\e928";
+}
+.iconedv-Course:before {
+  content: "\e929";
+}
+.iconedv-Dashboard:before {
+  content: "\e92a";
+}
+.iconedv-Delete:before {
+  content: "\e92b";
+}
+.iconedv-Description:before {
+  content: "\e92c";
+}
+.iconedv-Done:before {
+  content: "\e92d";
+}
+.iconedv-Download:before {
+  content: "\e92e";
+}
+.iconedv-Edit:before {
+  content: "\e92f";
+}
+.iconedv-Erase:before {
+  content: "\e930";
+}
+.iconedv-Exit:before {
+  content: "\e931";
+}
+.iconedv-Feedback:before {
+  content: "\e932";
+}
+.iconedv-Filter:before {
+  content: "\e933";
+}
+.iconedv-Fire:before {
+  content: "\e934";
+}
+.iconedv-Flag-Outline:before {
+  content: "\e935";
+}
+.iconedv-Flag:before {
+  content: "\e936";
+}
+.iconedv-Folder:before {
+  content: "\e937";
+}
+.iconedv-Forward:before {
+  content: "\e938";
+}
+.iconedv-Full-Screen:before {
+  content: "\e939";
+}
+.iconedv-Gamepad:before {
+  content: "\e93a";
+}
+.iconedv-Gif:before {
+  content: "\e93b";
+}
+.iconedv-Hand-Up:before {
+  content: "\e93c";
+}
+.iconedv-Hand:before {
+  content: "\e93d";
+}
+.iconedv-Headsetmic:before {
+  content: "\e93e";
+}
+.iconedv-History:before {
+  content: "\e93f";
+}
+.iconedv-Home:before {
+  content: "\e940";
+}
+.iconedv-Hourglass-Empty:before {
+  content: "\e941";
+}
+.iconedv-Hourglass:before {
+  content: "\e942";
+}
+.iconedv-Icon-Close:before {
+  content: "\e943";
+}
+.iconedv-ID:before {
+  content: "\e944";
+}
+.iconedv-Image:before {
+  content: "\e945";
+}
+.iconedv-Information:before {
+  content: "\e946";
+}
+.iconedv-Key:before {
+  content: "\e947";
+}
+.iconedv-Link:before {
+  content: "\e948";
+}
+.iconedv-Location:before {
+  content: "\e949";
+}
+.iconedv-Lock-Open:before {
+  content: "\e94a";
+}
+.iconedv-Lock:before {
+  content: "\e94b";
+}
+.iconedv-Magic:before {
+  content: "\e94c";
+}
+.iconedv-Mail:before {
+  content: "\e94d";
+}
+.iconedv-Maraphone-1:before {
+  content: "\e94e";
+}
+.iconedv-Maraphone:before {
+  content: "\e94f";
+}
+.iconedv-Material:before {
+  content: "\e950";
+}
+.iconedv-Menu:before {
+  content: "\e951";
+}
+.iconedv-Mic-Off:before {
+  content: "\e952";
+}
+.iconedv-Mic-On:before {
+  content: "\e953";
+}
+.iconedv-Minus:before {
+  content: "\e954";
+}
+.iconedv-Mode-Cell:before {
+  content: "\e955";
+}
+.iconedv-Mode-Compact:before {
+  content: "\e956";
+}
+.iconedv-Mode-List:before {
+  content: "\e957";
+}
+.iconedv-More:before {
+  content: "\e958";
+}
+.iconedv-Move:before {
+  content: "\e959";
+}
+.iconedv-Not-Interested:before {
+  content: "\e95a";
+}
+.iconedv-Notification:before {
+  content: "\e95b";
+}
+.iconedv-Party:before {
+  content: "\e95c";
+}
+.iconedv-Pause:before {
+  content: "\e95d";
+}
+.iconedv-Payment-1:before {
+  content: "\e95e";
+}
+.iconedv-Payment:before {
+  content: "\e95f";
+}
+.iconedv-Pin:before {
+  content: "\e960";
+}
+.iconedv-Plan:before {
+  content: "\e961";
+}
+.iconedv-Play:before {
+  content: "\e962";
+}
+.iconedv-Plus:before {
+  content: "\e963";
+}
+.iconedv-Pointer:before {
+  content: "\e964";
+}
+.iconedv-Position:before {
+  content: "\e965";
+}
+.iconedv-Problem:before {
+  content: "\e966";
+}
+.iconedv-Question-Circle:before {
+  content: "\e967";
+}
+.iconedv-Quote:before {
+  content: "\e968";
+}
+.iconedv-Radiobutton-Blank:before {
+  content: "\e969";
+}
+.iconedv-Radiobutton:before {
+  content: "\e96a";
+}
+.iconedv-Reactions:before {
+  content: "\e96b";
+}
+.iconedv-Receipt:before {
+  content: "\e96c";
+}
+.iconedv-Redo:before {
+  content: "\e96d";
+}
+.iconedv-Reload:before {
+  content: "\e96e";
+}
+.iconedv-Remove-To:before {
+  content: "\e96f";
+}
+.iconedv-Repeat:before {
+  content: "\e970";
+}
+.iconedv-Reply:before {
+  content: "\e971";
+}
+.iconedv-Reset:before {
+  content: "\e972";
+}
+.iconedv-Rocket:before {
+  content: "\e973";
+}
+.iconedv-Save:before {
+  content: "\e974";
+}
+.iconedv-School:before {
+  content: "\e975";
+}
+.iconedv-Select:before {
+  content: "\e976";
+}
+.iconedv-Send:before {
+  content: "\e977";
+}
+.iconedv-Setting:before {
+  content: "\e978";
+}
+.iconedv-Share:before {
+  content: "\e979";
+}
+.iconedv-Shopping-Cart:before {
+  content: "\e97a";
+}
+.iconedv-Shopping:before {
+  content: "\e97b";
+}
+.iconedv-Slash:before {
+  content: "\e97c";
+}
+.iconedv-Smile:before {
+  content: "\e97d";
+}
+.iconedv-Speaker-Off:before {
+  content: "\e97e";
+}
+.iconedv-Speaker:before {
+  content: "\e97f";
+}
+.iconedv-Speed-Normal:before {
+  content: "\e980";
+}
+.iconedv-Speed-Slow:before {
+  content: "\e981";
+}
+.iconedv-Speed-Very-Slow:before {
+  content: "\e982";
+}
+.iconedv-Star-Circle:before {
+  content: "\e983";
+}
+.iconedv-Star-Rate-Blank:before {
+  content: "\e984";
+}
+.iconedv-Star-Rate:before {
+  content: "\e985";
+}
+.iconedv-Star:before {
+  content: "\e986";
+}
+.iconedv-Stop:before {
+  content: "\e987";
+}
+.iconedv-Subtitles-Off:before {
+  content: "\e988";
+}
+.iconedv-Subtitles-On:before {
+  content: "\e989";
+}
+.iconedv-Support:before {
+  content: "\e98a";
+}
+.iconedv-Text-Bold:before {
+  content: "\e98b";
+}
+.iconedv-Text-Italic:before {
+  content: "\e98c";
+}
+.iconedv-Text-Strikethrough:before {
+  content: "\e98d";
+}
+.iconedv-Text-Underliner:before {
+  content: "\e98e";
+}
+.iconedv-Text:before {
+  content: "\e98f";
+}
+.iconedv-Time-Circle:before {
+  content: "\e990";
+}
+.iconedv-Time:before {
+  content: "\e991";
+}
+.iconedv-Timer:before {
+  content: "\e992";
+}
+.iconedv-Title-Off:before {
+  content: "\e993";
+}
+.iconedv-Title-On:before {
+  content: "\e994";
+}
+.iconedv-Today:before {
+  content: "\e995";
+}
+.iconedv-Tool-Arrow:before {
+  content: "\e996";
+}
+.iconedv-Tool-Brush:before {
+  content: "\e997";
+}
+.iconedv-Tool-Circle:before {
+  content: "\e998";
+}
+.iconedv-Tool-Cursor:before {
+  content: "\e999";
+}
+.iconedv-Tool-Line:before {
+  content: "\e99a";
+}
+.iconedv-Tool-Rectangle:before {
+  content: "\e99b";
+}
+.iconedv-Tool-Triangle:before {
+  content: "\e99c";
+}
+.iconedv-Translate:before {
+  content: "\e99d";
+}
+.iconedv-Unarchived:before {
+  content: "\e99e";
+}
+.iconedv-Undo:before {
+  content: "\e99f";
+}
+.iconedv-Unite:before {
+  content: "\e9a0";
+}
+.iconedv-Ununite:before {
+  content: "\e9a1";
+}
+.iconedv-Upload:before {
+  content: "\e9a2";
+}
+.iconedv-Usd-Circle:before {
+  content: "\e9a3";
+}
+.iconedv-Usd:before {
+  content: "\e9a4";
+}
+.iconedv-User-Add:before {
+  content: "\e9a5";
+}
+.iconedv-User-Camera:before {
+  content: "\e9a6";
+}
+.iconedv-User-Lock:before {
+  content: "\e9a7";
+}
+.iconedv-User-Off:before {
+  content: "\e9a8";
+}
+.iconedv-User-Unlock:before {
+  content: "\e9a9";
+}
+.iconedv-User:before {
+  content: "\e9aa";
+}
+.iconedv-Users:before {
+  content: "\e9ab";
+}
+.iconedv-Verified:before {
+  content: "\e9ac";
+}
+.iconedv-Visibility-Off:before {
+  content: "\e9ad";
+}
+.iconedv-Visibility:before {
+  content: "\e9ae";
+}
+.iconedv-Wallet:before {
+  content: "\e9af";
+}
+.iconedv-World:before {
+  content: "\e9b0";
+}
