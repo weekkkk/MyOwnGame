@@ -6,17 +6,28 @@ const {
 const ApiError = require('../error/ApiError')
 
 class RoomController {
+  async remove(req, res, next) {
+    try {
+      const {
+        id
+      } = req.body
+
+      const isSuccess = await Room.remove({
+        id
+      })
+
+      return res.json(isSuccess)
+    } catch (e) {
+      next(ApiError.badRequest(e.message))
+    }
+  }
+
   async create(req, res, next) {
     try {
       const {
         name,
         players_count,
       } = req.body
-      // const {
-      //   img
-      // } = req.files
-      // let fileName = uuid.v4() + '.jpg'
-      // img.mv(path.resolve(__dirname, '..', 'static', fileName))
 
       const room = await Room.create({
         name,
