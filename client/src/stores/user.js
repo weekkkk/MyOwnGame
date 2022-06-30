@@ -11,7 +11,7 @@ export const useUserStore = defineStore('counter', () => {
     isAuth.value = bool
   }
 
-  const user = ref()
+  const user = ref({})
   const setUser = (user) => {
     user.value = user
   }

@@ -25,9 +25,12 @@
         :class="{ 'with-icon': icon }"
       />
     </span>
-    <span class="error-message-box" v-if="errorMessage">
-      {{ errorMessage }}
-    </span>
+
+    <transition name="open">
+      <span class="error-message-box" v-if="errorMessage && !isFocus">
+        {{ errorMessage }}
+      </span>
+    </transition>
   </div>
 </template>
 
@@ -42,7 +45,7 @@ export default {
     placeholder: String,
     label: String,
     icon: String,
-    type: {type: String, default: 'text'},
+    type: { type: String, default: "text" },
     minWidth: { type: Number, default: 160 },
     maxWidth: Number,
     errorMessage: String,
@@ -80,6 +83,23 @@ export default {
 @label-fw: 500;
 @bg-color: #fff;
 @transition: 0.15s;
+
+.open-enter-active {
+  transition: 0.15s;
+  transition-property: transform opacity;
+}
+
+.open-leave-active {
+  transition: 0.15s;
+  transition-property: transform opacity;
+}
+
+.open-enter-from,
+.open-leave-to {
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+}
 
 .ui-input {
   display: inline-flex;
@@ -140,6 +160,10 @@ export default {
       &.with-icon {
         padding-left: calc(@p * 2 + @lh);
       }
+    }
+
+    input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px white inset;
     }
   }
 
