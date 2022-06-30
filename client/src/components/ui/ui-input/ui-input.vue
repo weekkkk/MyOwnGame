@@ -21,6 +21,7 @@
         v-model="innerValue"
         @focus="onFocus"
         @blur="onFocus"
+        :type="type"
         :class="{ 'with-icon': icon }"
       />
     </span>
@@ -41,8 +42,9 @@ export default {
     placeholder: String,
     label: String,
     icon: String,
+    type: {type: String, default: 'text'},
     minWidth: { type: Number, default: 160 },
-    maxWidth: { type: Number, default: 320 },
+    maxWidth: Number,
     errorMessage: String,
     isSuccess: Boolean,
   },

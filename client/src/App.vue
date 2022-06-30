@@ -13,5 +13,6 @@
   box-sizing: border-box;
   font-family: "Ubuntu";
   font-size: 16px;
+  color: var(--mog-black);
 }
 </style>

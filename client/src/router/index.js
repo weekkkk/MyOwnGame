@@ -2,21 +2,27 @@ import {
   createRouter,
   createWebHistory
 } from 'vue-router'
-import LayoutBase from '../views/layouts/layout-base.vue'
-import LoginPage from '../views/pages/login-page.vue'
+import LayoutBase from '../layouts/layout-base.vue'
+
+import AuthPage from '../pages/auth-page.vue'
 
 import {
-  LOGIN_PAGE
-} from './router-names.js'
+  LOGIN_ROUTE,
+  REGISTRATION_ROUTE
+} from './router-constants.js'
 
 const routes = [{
   path: '/',
   component: LayoutBase,
   children: [{
-    path: '/login',
-    name: LOGIN_PAGE,
-    component: LoginPage
-  }]
+      path: LOGIN_ROUTE,
+      component: AuthPage
+    },
+    {
+      path: REGISTRATION_ROUTE,
+      component: AuthPage
+    },
+  ]
 }, ]
 
 const router = createRouter({

@@ -14,10 +14,9 @@ export default {
 
 <style lang="less" scoped>
 .layout-base {
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
   min-width: 100vw;
   padding: var(--mog-desktop-padding);
+  display: grid;
 }
 </style>
