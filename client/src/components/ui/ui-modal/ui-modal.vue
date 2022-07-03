@@ -1,22 +1,27 @@
 <template>
-  <div
-    class="ui-modal"
-    v-if="modelValue"
-    @click="$emit('update:modelValue', !modelValue)"
-  >
-    <div class="ui-modal-box container-s" @click.stop>
-      <div class="titile-box">
-        <h4>{{ title }}</h4>
-        <i class="iconedv-Icon-Close"></i>
-      </div>
-      <div class="body-box">
-        <slot></slot>
-      </div>
-      <div class="buttuns-box">
-        <slot name="buttons"></slot>
+  <transition name="open">
+    <div
+      class="ui-modal"
+      v-if="modelValue"
+      @click="$emit('update:modelValue', !modelValue)"
+    >
+      <div class="ui-modal-box container-s" @click.stop>
+        <div class="titile-box">
+          <h4>{{ title }}</h4>
+          <i
+            class="iconedv-Icon-Close"
+            @click="$emit('update:modelValue', !modelValue)"
+          ></i>
+        </div>
+        <div class="body-box">
+          <slot></slot>
+        </div>
+        <div class="buttuns-box">
+          <slot name="buttons"></slot>
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -31,9 +36,25 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@p: 24px; 
+@p: 24px;
 @br: 8px;
 @border: 1px solid var(--mog-gray-50);
+
+.open-enter-active {
+  transition: 0.15s;
+  transition-property: transform;
+}
+
+.open-leave-active {
+  transition: 0.15s;
+  transition-property: transform;
+}
+
+.open-enter-from,
+.open-leave-to {
+  transform: scale(0);
+  transform-origin: center;
+}
 
 .ui-modal {
   position: fixed;
@@ -63,6 +84,16 @@ export default {
         line-height: 24px;
         margin-left: 16px;
         cursor: pointer;
+        transition: 0.15s;
+        color: var(--mog-gray-75);
+
+        &:hover {
+          filter: brightness(110%);
+        }
+
+        &:active {
+          filter: brightness(90%);
+        }
       }
     }
 
@@ -72,7 +103,7 @@ export default {
 
     .buttuns-box {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
     }
   }
 }

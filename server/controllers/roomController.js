@@ -1,5 +1,3 @@
-const uuid = require('uuid')
-const path = require('path')
 const {
   Room
 } = require('../models/models')
@@ -49,16 +47,16 @@ class RoomController {
     } = req.query
     page = page || 1
     limit = limit || 10
-    let rooms
+      let rooms
     let offset = page * limit - limit
     if (!name && !players_count) {
-      rooms = await Device.findAll({
+      rooms = await Room.findAll({
         limit,
         offset
       })
     }
     if (!name && players_count) {
-      rooms = await Device.findAll({
+      rooms = await Room.findAll({
         where: {
           players_count
         },
@@ -67,7 +65,7 @@ class RoomController {
       })
     }
     if (name && !players_count) {
-      rooms = await Device.findAll({
+      rooms = await Room.findAll({
         where: {
           name
         },
@@ -76,7 +74,7 @@ class RoomController {
       })
     }
     if (name && players_count) {
-      rooms = await Device.findAll({
+      rooms = await Room.findAll({
         where: {
           name,
           players_count

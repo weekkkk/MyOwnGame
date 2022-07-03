@@ -30,7 +30,6 @@ const Room = sequelize.define('room', {
   },
   name: {
     type: DataTypes.STRING,
-    defaultValue: 'Room'
   },
   players_count: {
     type: DataTypes.INTEGER,
