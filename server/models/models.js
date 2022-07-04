@@ -30,15 +30,16 @@ const Room = sequelize.define('room', {
   },
   name: {
     type: DataTypes.STRING,
+    defaultValue: 'Room'
   },
   players_count: {
     type: DataTypes.INTEGER,
     defaultValue: 4
-  },
+  }
 })
 
 // // User
-// User.hasOne(Room)
+User.hasOne(Room)
 // Room.belongsTo(User)
 
 // Room

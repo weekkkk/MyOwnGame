@@ -6,14 +6,14 @@ export const createRoom = async (room) => {
   return data
 }
 
-export const fetchRooms = async (typeId, brandId, page, limit= 5) => {
+export const fetchRooms = async (name, players_count, page, limit= 5) => {
   const {data} = await $host.get('api/room', {params: {
-          typeId, brandId, page, limit
+          name, players_count, page, limit
       }})
   return data
 }
 
 export const fetchOneRoom = async (id) => {
-  const {data} = await $host.get('api/room/' + id)
+  const {data} = await $host.get('api/room' + id)
   return data
 }

@@ -23,6 +23,7 @@
         @blur="onFocus"
         :type="type"
         :class="{ 'with-icon': icon }"
+        :readonly="isReadOnly"
       />
     </span>
 
@@ -41,13 +42,14 @@ export default {
   name: "ui-input",
 
   props: {
-    modelValue: String,
+    modelValue: null,
     placeholder: String,
     label: String,
     icon: String,
     type: { type: String, default: "text" },
     minWidth: { type: Number, default: 160 },
     maxWidth: Number,
+    isReadOnly: Boolean,
     errorMessage: String,
     isSuccess: Boolean,
   },

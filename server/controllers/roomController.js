@@ -39,15 +39,15 @@ class RoomController {
   }
 
   async getAll(req, res) {
-    const {
+    let {
       name,
       players_count,
+      page,
       limit,
-      page
     } = req.query
     page = page || 1
     limit = limit || 10
-      let rooms
+    let rooms
     let offset = page * limit - limit
     if (!name && !players_count) {
       rooms = await Room.findAll({
@@ -86,17 +86,17 @@ class RoomController {
     return res.json(rooms);
   }
 
-  async getOne(req, res) {
-    const {
-      id
-    } = req.params
-    const room = await Room.findOne({
-      where: {
-        id
-      }
-    }, )
-    return res.json(room)
-  }
+  // async getOne(req, res) {
+  //   const {
+  //     id
+  //   } = req.params
+  //   const room = await Room.findOne({
+  //     where: {
+  //       id
+  //     }
+  //   }, )
+  //   return res.json(room)
+  // }
 }
 
 module.exports = new RoomController()

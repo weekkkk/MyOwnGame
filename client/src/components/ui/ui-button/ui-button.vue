@@ -4,6 +4,7 @@
     class="ui-button"
     :class="[color, { 'is-disabled': isDisabled }]"
   >
+    <i class="icon" :class="[icon, { 'mr-2': !isOnlyIcon }]" v-if="icon"></i>
     <slot></slot>
   </button>
 </template>
@@ -13,6 +14,8 @@ import { ref } from "vue";
 export default {
   name: "ui-button",
   props: {
+    icon: String,
+    isOnlyIcon: Boolean,
     color: { type: String, default: "blue" },
     isDisabled: Boolean,
   },
@@ -41,6 +44,7 @@ export default {
 @fw: 500;
 
 .ui-button {
+  display: flex;
   border: none;
   outline: none;
   border-radius: @br;
@@ -51,6 +55,12 @@ export default {
   line-height: @lh;
   font-weight: @fw;
   transition: 0.15s;
+
+  .icon {
+    font-size: @lh;
+    line-height: @lh;
+    color: @color;
+  }
 
   &.blue {
     background-color: @blue;
