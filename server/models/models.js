@@ -35,6 +35,10 @@ const Room = sequelize.define('room', {
   players_count: {
     type: DataTypes.INTEGER,
     defaultValue: 4
+  },
+  players: {
+    type: DataTypes.ARRAY(DataTypes.INTEGER),
+    defaultValue: []
   }
 })
 

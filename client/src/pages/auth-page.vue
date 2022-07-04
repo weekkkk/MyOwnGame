@@ -79,7 +79,8 @@ export default {
         } else {
           data.value = await registration(email.value, password.value);
         }
-        userStore.setUser(userStore.user);
+        userStore.user = data.value;
+        console.log(userStore.user);
         userStore.setIsAuth(true);
         router.push(ROOMS_ROUTE);
       } catch (e) {

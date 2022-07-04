@@ -13,11 +13,11 @@
         <ui-banner
           v-for="room in rooms"
           :key="room.id"
-          :title="room.name"
+          :title="`${room.name} - ${room.players.length} / ${room.players_count}`"
           class="room"
           icon="iconedv-Star"
         >
-          <ui-button>Войти</ui-button>
+            <ui-button @click="onEnter(room.id)">Войти</ui-button>
         </ui-banner>
 
         <div class="f j-e">
@@ -81,7 +81,8 @@ import UiBanner from "../components/ui/ui-banner/ui-banner.vue";
 import UiButton from "../components/ui/ui-button/ui-button.vue";
 import UiInput from "../components/ui/ui-input/ui-input.vue";
 import UiModal from "../components/ui/ui-modal/ui-modal.vue";
-import { createRoom, fetchRooms } from "../http/roomAPI";
+import { addPlayerToRoom, createRoom, fetchRooms } from "../http/roomAPI";
+import { useUserStore } from "../stores/user";
 
 export default {
   components: { UiBanner, UiButton, UiInput, UiModal },
@@ -117,6 +118,14 @@ export default {
       });
     };
 
+    const userStore = useUserStore();
+    const onEnter = (room_id) => {
+      console.log(room_id);
+      addPlayerToRoom(userStore.user.id, room_id).then((data) => {
+        console.log(data);
+      });
+    };
+
     return {
       rooms,
       page,
@@ -126,6 +135,7 @@ export default {
       playersCount,
       onCreateRoom,
       searchName,
+      onEnter,
     };
   },
 };

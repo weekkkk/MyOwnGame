@@ -86,17 +86,44 @@ class RoomController {
     return res.json(rooms);
   }
 
-  // async getOne(req, res) {
-  //   const {
-  //     id
-  //   } = req.params
-  //   const room = await Room.findOne({
-  //     where: {
-  //       id
-  //     }
-  //   }, )
-  //   return res.json(room)
-  // }
+  async addPlayer(req, res) {
+    const {
+      player_id,
+      room_id
+    } = req.body
+
+    const room = await Room.findOne({
+      where: {
+        id: room_id
+      }
+    })
+    if (player_id && room && !room.players.includes(player_id)) {
+      room.players.push(player_id)
+      const updRoom = await Room.update({
+        players: room.players
+      }, {
+        where: {
+          id: room.id
+        }
+      })
+    }
+
+    return res.json(room);
+  }
+
 }
+
+// async getOne(req, res) {
+//   const {
+//     id
+//   } = req.params
+//   const room = await Room.findOne({
+//     where: {
+//       id
+//     }
+//   }, )
+//   return res.json(room)
+// }
+// }
 
 module.exports = new RoomController()
