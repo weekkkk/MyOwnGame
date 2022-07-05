@@ -28,7 +28,7 @@ export const fetchRooms = async (name, players_count, page, limit = 5) => {
 export const fetchOneRoom = async (id) => {
   const {
     data
-  } = await $host.get('api/room' + id)
+  } = await $host.get('api/room/' + id)
   return data
 }
 

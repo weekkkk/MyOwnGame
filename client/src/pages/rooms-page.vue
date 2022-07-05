@@ -1,6 +1,6 @@
 <template>
   <div class="f j-c">
-    <div class="container-m">
+    <div class="container-m f d-c">
       <div class="f a-c j-b mb-3">
         <h3>Комнаты для игры</h3>
         <ui-button @click="visibleAddRoomModal = true">Создать</ui-button>
