@@ -33,7 +33,6 @@ export const fetchOneRoom = async (id) => {
 }
 
 export const addPlayerToRoom = async (player_id, room_id) => {
-  // console.log(room_id);
   const {
     data
   } = await $authHost.put('api/room', {

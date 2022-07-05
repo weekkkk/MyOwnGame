@@ -7,11 +7,13 @@ import LayoutPage from '../layouts/layout-page.vue'
 
 import AuthPage from '../pages/auth-page.vue'
 import RoomsPage from '../pages/rooms-page.vue'
+import RoomPage from '../pages/room-page.vue'
 
 import {
   LOGIN_ROUTE,
   REGISTRATION_ROUTE,
-  ROOMS_ROUTE
+  ROOMS_ROUTE,
+  ROOM_ROUTE
 } from './router-constants.js'
 
 const routes = [{
@@ -31,9 +33,16 @@ const routes = [{
     path: '/',
     component: LayoutPage,
     children: [{
-      path: ROOMS_ROUTE,
-      component: RoomsPage
-    }, ]
+        path: ROOMS_ROUTE,
+        component: RoomsPage
+      },
+      {
+        path: ROOM_ROUTE+'/:id',
+        name: 'room',
+        component: RoomPage,
+        props: true,
+      },
+    ]
   },
 
 ]

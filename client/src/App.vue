@@ -2,6 +2,25 @@
   <router-view />
 </template>
 
+<script>
+import { onMounted } from "@vue/runtime-core";
+import { useUserStore } from "./stores/user";
+import { check } from "./http/userAPI";
+
+export default {
+  setup() {
+    const userStore = useUserStore();
+    onMounted(() => {
+      check().then((data) => {
+        userStore.user = data;
+        userStore.setIsAuth(true);
+      });
+    });
+  },
+};
+</script>
+
+
 <style lang="less">
 @import "@/assets/styles/main.less";
 @import "@/assets/fonts/edvibe/style.css";

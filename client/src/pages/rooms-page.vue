@@ -17,7 +17,7 @@
           class="room"
           icon="iconedv-Star"
         >
-            <ui-button @click="onEnter(room.id)">Войти</ui-button>
+          <ui-button @click="onEnter(room.id)">Войти</ui-button>
         </ui-banner>
 
         <div class="f j-e">
@@ -83,11 +83,15 @@ import UiInput from "../components/ui/ui-input/ui-input.vue";
 import UiModal from "../components/ui/ui-modal/ui-modal.vue";
 import { addPlayerToRoom, createRoom, fetchRooms } from "../http/roomAPI";
 import { useUserStore } from "../stores/user";
+// import { ROOM_ROUTE } from "../router/router-constants";
+import { useRouter } from "vue-router";
 
 export default {
   components: { UiBanner, UiButton, UiInput, UiModal },
   name: "rooms-page",
   setup() {
+    const router = useRouter();
+
     const rooms = ref([]);
     const page = ref(1);
     const limit = 2;
@@ -122,7 +126,9 @@ export default {
     const onEnter = (room_id) => {
       console.log(room_id);
       addPlayerToRoom(userStore.user.id, room_id).then((data) => {
-        console.log(data);
+        if (data.players.includes(userStore.user.id)) {
+          router.push({ name: 'room', params: { id: room_id } });
+        }
       });
     };
 

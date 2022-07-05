@@ -111,19 +111,17 @@ class RoomController {
     return res.json(room);
   }
 
+  async getOne(req, res) {
+    const {
+      id
+    } = req.params
+    const room = await Room.findOne({
+      where: {
+        id
+      }
+    }, )
+    return res.json(room)
+  }
 }
-
-// async getOne(req, res) {
-//   const {
-//     id
-//   } = req.params
-//   const room = await Room.findOne({
-//     where: {
-//       id
-//     }
-//   }, )
-//   return res.json(room)
-// }
-// }
 
 module.exports = new RoomController()
