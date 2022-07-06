@@ -2,6 +2,7 @@ const {
   Room
 } = require('../models/models')
 const ApiError = require('../error/ApiError')
+const Emitter = require('events')
 
 class RoomController {
   async remove(req, res, next) {
@@ -122,6 +123,35 @@ class RoomController {
     }, )
     return res.json(room)
   }
+
+  async updateAnswerPlayers(req, res) {
+    const {
+      room_id,
+      player_id
+    } = req.query
+
+    let room = await Room.findOne({
+      where: {
+        id: room_id
+      }
+    })
+
+    room.answered_players.push(player_id)
+
+    const updRoom = await Room.update({
+      answered_players: room.answered_players
+    }, {
+      where: {
+        id: room.id
+      }
+    })
+
+    this.emit(eventName, answeredPlayers);
+
+    return res.json(updRoom)
+  }
 }
 
-module.exports = new RoomController()
+let roomController = new RoomController()
+
+module.exports = roomController

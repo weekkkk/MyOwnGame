@@ -43,6 +43,10 @@ const Room = sequelize.define('room', {
   theme: {
     type: DataTypes.STRING,
     defaultValue: 'Цари',
+  },
+  answered_players: {
+    type: DataTypes.ARRAY(DataTypes.INTEGER),
+    defaultValue: []
   }
 })
 
@@ -71,12 +75,12 @@ const Question = sequelize.define('question', {
 })
 
 // // User
-User.hasOne(Room)
+// User.hasOne(Room)
 // Room.belongsTo(User)
 
 // Room
-Room.hasMany(User)
-User.belongsTo(Room)
+// Room.hasMany(User)
+// User.belongsTo(Room)
 
 // Question.hasMany(Room)
 // User.belongsTo(Question)

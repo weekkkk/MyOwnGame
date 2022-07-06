@@ -41,3 +41,13 @@ export const addPlayerToRoom = async (player_id, room_id) => {
   })
   return data
 }
+
+export const updateAnswerPlayers = async (player_id, room_id) => {
+  const {
+    data
+  } = await $authHost.put('api/room/answer', {
+    player_id: player_id,
+    room_id: room_id,
+  })
+  return data
+}

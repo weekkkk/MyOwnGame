@@ -1,10 +1,17 @@
 <template>
   <div class="f j-c">
     <div class="container-m f d-c">
-      <h3 class="mb-3">{{ roomName }}</h3>
-      <h4 class="mb-3">{{ theme }}</h4>
+      <h3 class="mb-3">{{ room.name }}</h3>
+      <h4 class="mb-3">{{ room.theme }}</h4>
 
-      <div class="f d-c question" v-if="questions.length">
+      <div
+        class="f d-c question"
+        v-if="
+          room.players &&
+          room.players.length == room.players_count &&
+          questions.length
+        "
+      >
         <h4 class="mb-3">{{ questions[currentQuestionIndex].text }}</h4>
 
         <ul class="f d-c">
@@ -28,7 +35,13 @@
         </ul>
         <div class="f j-b a-c">
           <div>Ответили: 1 / 2</div>
-          <ui-button>Отправить</ui-button>
+          <ui-button @click="onSend" :isDisabled="!answer">Отправить</ui-button>
+        </div>
+      </div>
+      <div v-else class="f d-c a-c j-c h-100">
+        <h4 class="mb-3">Ждем игроков...</h4>
+        <div class="loader">
+          <i></i>
         </div>
       </div>
     </div>
@@ -38,9 +51,11 @@
 <script>
 import { useRoute } from "vue-router";
 import { ref } from "@vue/reactivity";
-import { fetchOneRoom } from "../http/roomAPI";
+import { fetchOneRoom, updateAnswerPlayers } from "../http/roomAPI";
 import { getAllByTheme } from "../http/questionAPI";
+import { useUserStore } from "../stores/user";
 import uiButton from "../components/ui/ui-button/ui-button.vue";
+import { onMounted } from "@vue/runtime-core";
 export default {
   components: { uiButton },
   name: "room-page",
@@ -50,17 +65,15 @@ export default {
     const questions = ref([]);
     const currentQuestionIndex = ref(0);
     const createQuesition = () => {
-      getAllByTheme(theme.value).then((data) => {
+      getAllByTheme(room.value.theme).then((data) => {
         questions.value = data;
       });
     };
 
-    const roomName = ref("");
-    const theme = ref("");
+    const room = ref({});
     const setData = () => {
       fetchOneRoom(route.params.id).then((data) => {
-        roomName.value = data.name;
-        theme.value = data.theme;
+        room.value = data;
 
         createQuesition();
       });
@@ -69,12 +82,27 @@ export default {
 
     const answer = ref("");
 
+    const userStore = useUserStore();
+    const onSend = () => {
+      updateAnswerPlayers(userStore.user.id, room.value.id).then((data) => {
+        console.log(data);
+      });
+    };
+
+    const trackRoom = () => {
+      setTimeout(setData, 1000);
+      if (room.players && room.players.length == room.players_count) return;
+      else setTimeout(trackRoom, 1000);
+    };
+
+    onMounted(() => trackRoom());
+
     return {
-      roomName,
-      theme,
+      room,
       questions,
       currentQuestionIndex,
       answer,
+      onSend,
     };
   },
 };
