@@ -1,2 +1,2 @@
-# my-own-game
-my-own-game
+# My Own Game
+My Own Game
